@@ -1,0 +1,11 @@
+[Unit]
+Description=steemd_server
+After=network.target  zram-config.service
+
+[Service]
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/local/bin/steemd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
