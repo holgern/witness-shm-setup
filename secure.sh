@@ -1,17 +1,9 @@
 #!/bin/bash
 
 # secure.sh - a script to install basic security for witness node
-
-# colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: secure.sh${normal}"
-ssh_port = "2020"
 
 echo -e "${green}Script for securing a witness server${normal}"
 

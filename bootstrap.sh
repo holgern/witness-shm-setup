@@ -1,10 +1,6 @@
 #!/bin/bash
 
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: bootstrap.sh${normal}"
 
@@ -22,6 +18,7 @@ then
 	echo -e "${usage}"
 	exit
 fi
+./print-config.sh
 
 echo -e "${margenta}Securing server...${normal}"
 ./secure.sh
@@ -31,10 +28,10 @@ mkdir ~/git
 echo -e "${margenta}Enable zram and 4GB swap...${normal}"
 ./bootstrap-zram-swap.sh
 echo -e "${margenta}Get compressed blockchain, decompress and add to data storage...${normal}"
-./get-blockchain.sh  /usr/local/bin/witness_node_data_dir/blockchain
+./get-blockchain.sh
 echo -e "${margenta}Start witness for first time in replay mode...${normal}"
 echo -e "${margenta}This will take a really long time depending on your hardware!${normal}"
-./witness-firsttime.sh /usr/local/bin/witness_node_data_dir/blockchain
+./witness-firsttime.sh
 
 echo
 echo $MAGENTA"Finished bootstrap, your system should now be set up."$RESET

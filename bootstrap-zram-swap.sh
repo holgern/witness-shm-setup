@@ -1,16 +1,9 @@
 #!/bin/bash
 
-# colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 
 usage="${yellow}Usage: bootstrap-zram-swap.sh${normal}"
-ssh_port = "2020"
 
 echo -e "${green}Enbable zram compression for a witness node${normal}"
 
@@ -45,4 +38,4 @@ echo -e "${cyan}Set shared-file-size to 2*RAM + 4 -1 GB in config.ini...${normal
 echo -e "${cyan}Assuming 64 GB ram now...${normal}"
 
 echo -e "${cyan}Remount /dev/shm tmpfs to (shared-file-size + 0.5 ) * 1024${normal}"
-mount -o remount,size=134656M /dev/shm
+mount -o remount,size=${shared_file_size} /dev/shm

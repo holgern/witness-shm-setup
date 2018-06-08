@@ -1,13 +1,7 @@
 #!/bin/bash
 
 
-# colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: get-blockchain.sh [data-location]${normal}"
 
@@ -20,17 +14,16 @@ then
 	exit
 fi
 # check parameter usage
-if [ $# -ne 1 ]
+if [ $# -eq 1 ]
 then
-	echo -e "${usage}"
-	exit
+	data_location = $1
 fi
 echo -e "${cyan}Install decompression tools...${normal}"
 apt-get update
 apt-get install -y pixz
 
 echo -e "${cyan}Download blockchain...${normal}"
-pushd $1 >/dev/null
+pushd ${data_location} >/dev/null
 wget https://gtg.steem.house/get/blockchain.xz/block_log.xz
 #wget http://seed.steemnode.world/block_log.xz
 

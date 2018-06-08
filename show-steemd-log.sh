@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: show-steemd-log.sh${normal}"
 

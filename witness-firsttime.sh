@@ -2,12 +2,7 @@
 
 
 # colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: witness-firsttime.sh [data-location]${normal}"
 
@@ -20,15 +15,14 @@ then
 	exit
 fi
 # check parameter usage
-if [ $# -ne 1 ]
+if [ $# -eq 1 ]
 then
-	echo -e "${usage}"
-	exit
+	data_location = $1
 fi
 
 echo -e "${cyan}Starting steemd...${normal}"
 echo  -e "${yellow}Note: press Ctrl+C at any time to attempt clean exit${normal}"
-steemd -d $1 --replay-blockchain
+steemd -d ${data_location} --replay-blockchain
 echo  -e "${red}steemd stopped${normal}"
 
 echo

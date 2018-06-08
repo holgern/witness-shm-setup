@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# colors
-yellow='\e[33m'
-red='\e[31m'
-green='\e[0;32m'
-margenta='\e[35m'
-cyan='\e[36m'
-normal='\e[0m'
+. ./witness.config
 
 usage="${yellow}Usage: witness-backup-ramdisk.sh [data-location]${normal}"
 
@@ -19,15 +13,16 @@ then
 	exit
 fi
 # check parameter usage
-if [ $# -ne 1 ]
+if [ $# -eq 1 ]
 then
-	echo -e "${usage}"
-	exit
+    shm_backup_dir = $1
+	echo -e "Backup to ${shm_backup_dir}"
+	
 fi
 
 echo -e "${cyan}Backup content of ramdisk...${normal}"
 echo -e "${cyan}Be sure that steemd is not running...${normal}"
-cp /dev/shm/shared_memory.meta $1
-cp /dev/shm/shared_memory.bin $1
+cp /dev/shm/shared_memory.meta ${shm_backup_dir}
+cp /dev/shm/shared_memory.bin ${shm_backup_dir}
 echo
 echo -e "${green}witness-backup-ramdisk finished${normal}"
