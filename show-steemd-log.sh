@@ -4,12 +4,12 @@
 
 usage="${yellow}Usage: show-steemd-log.sh${normal}"
 
-echo -e "${green) Show steemd log ${normal}"
+echo -e "${green} Show steemd log ${normal}"
 
 # running as root
 if [ "$EUID" -ne 0 ]
 then
-	echo "${red}Please run this script as root${normal}"
+	echo -e "${red}Please run this script as root${normal}"
 	exit
 fi
 # check parameter usage

@@ -6,12 +6,12 @@
 
 usage="${yellow}Usage: witness-firsttime.sh [data-location]${normal}"
 
-echo -e "${green)Runs steemd --replay-blockchain for first run of steemd. ${normal}"
+echo -e "${green}Runs steemd --replay-blockchain for first run of steemd. ${normal}"
 
 # running as root
 if [ "$EUID" -ne 0 ]
 then
-	echo "${red}Please run this script as root${normal}"
+	echo -e "${red}Please run this script as root${normal}"
 	exit
 fi
 # check parameter usage

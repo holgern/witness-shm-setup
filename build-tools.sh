@@ -6,12 +6,12 @@
 
 usage="${yellow}Usage: build-tools.sh [data-location]${normal}"
 
-echo -e "${green)Build steemd and cli_callet and install it to /usr/local/bin. This script is for Ubuntu 16.04.${normal}"
+echo -e "${green}Build steemd and cli_callet and install it to /usr/local/bin. This script is for Ubuntu 16.04.${normal}"
 
 # running as root
 if [ "$EUID" -ne 0 ]
 then
-	echo "${red}Please run this script as root${normal}"
+	echo -e "${red}Please run this script as root${normal}"
 	exit
 fi
 # check parameter usage

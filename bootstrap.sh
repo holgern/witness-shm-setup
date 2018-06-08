@@ -33,13 +33,3 @@ echo -e "${margenta}Start witness for first time in replay mode...${normal}"
 echo -e "${margenta}This will take a really long time depending on your hardware!${normal}"
 ./witness-firsttime.sh
 
-echo
-echo $MAGENTA"Finished bootstrap, your system should now be set up."$RESET
-echo
-echo $YELLOW"What now?!"$RESET
-echo $WHITE"You need to edit the "$CYAN"config.ini"$WHITE" file in "$CYAN"~/data/"$WHITE" and"
-echo "add your witness account name and WIF."$RESET
-echo
-echo $WHITE"Then run one of the following:"$RESET
-echo $GREEN"   witness.sh          : start witness"$RESET
-echo $GREEN"   witness-ramdisk.sh  : start witness on RAM disk"$RESET

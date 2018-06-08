@@ -4,12 +4,12 @@
 
 usage="${yellow}Usage: witness-backup-ramdisk.sh [data-location]${normal}"
 
-echo -e "${green)Backup content from ramdisk. ${normal}"
+echo -e "${green}Backup content from ramdisk. ${normal}"
 
 # running as root
 if [ "$EUID" -ne 0 ]
 then
-	echo "${red}Please run this script as root${normal}"
+	echo -e "${red}Please run this script as root${normal}"
 	exit
 fi
 # check parameter usage
