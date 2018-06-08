@@ -22,7 +22,6 @@ fi
 
 echo -e "${cyan}Backup content of ramdisk...${normal}"
 echo -e "${cyan}Be sure that steemd is not running...${normal}"
-cp /dev/shm/shared_memory.meta ${shm_backup_dir}
-cp /dev/shm/shared_memory.bin ${shm_backup_dir}
+rsync --quiet --archive --delete --recursive --force /dev/shm/ ${shm_backup_dir}
 echo
 echo -e "${green}witness-backup-ramdisk finished${normal}"

@@ -21,9 +21,8 @@ fi
 
 echo -e "${cyan}Be sure that steemd is not running...${normal}"
 echo -e "${cyan}Remount /dev/shm tmpfs to (shared-file-size + 0.5 ) * 1024${normal}"
-mount -o remount,size=134656M /dev/shm
+mount -o remount,size=${shared_file_size} /dev/shm
 echo -e "${cyan}Restore content to ramdisk...${normal}"
-cp ${shm_backup_dir}/shared_memory.bin /dev/shm/
-cp ${shm_backup_dir}/shared_memory.meta /dev/shm/
+rsync --quiet --archive ${shm_backup_dir}/ /dev/shm/
 echo
 echo -e "${cyan}witness-restore-ramdisk finished${normal}"
