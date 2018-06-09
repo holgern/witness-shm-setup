@@ -39,3 +39,5 @@ echo -e "${cyan}Assuming 64 GB ram now...${normal}"
 
 echo -e "${cyan}Remount /dev/shm tmpfs to (shared-file-size + 0.5 ) * 1024${normal}"
 mount -o remount,size=${shared_file_size} /dev/shm
+
+echo "tmpfs   /dev/shm         tmpfs   defaults,noexec,nosuid,size=${shared_file_size}      0  0" | sudo tee /etc/fstab

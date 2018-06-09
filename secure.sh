@@ -35,4 +35,4 @@ echo -e "${cyan}You can find an example sshd_config in this github ...${normal}"
 echo -e "${cyan}Please do the following steps by hand, when you are sure that the server is reachable from port ${ssh_port}...${normal}"
 
 echo -e "${margenta}ufw enable${normal}"
-echo -e "${margenta}ufw allow 2020"
+echo -e "${margenta}ufw allow 2020${normal}"
