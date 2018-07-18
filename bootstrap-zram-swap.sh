@@ -35,7 +35,7 @@ mkswap /swapfile
 echo "/swapfile swap swap defaults 0 0" | sudo tee /etc/fstab
 
 echo -e "${cyan}Set shared-file-size to 2*RAM + 4 -1 GB in config.ini...${normal}"
-echo -e "${cyan}Assuming 64 GB ram now...${normal}"
+echo -e "${cyan}Assuming 67 GB ram now...${normal}"
 
 echo -e "${cyan}Remount /dev/shm tmpfs to (shared-file-size + 0.5 ) * 1024${normal}"
 mount -o remount,size=${shared_file_size} /dev/shm
